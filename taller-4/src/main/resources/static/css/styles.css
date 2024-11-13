@@ -1,0 +1,90 @@
+body {
+    font-family: sans-serif;
+}
+
+h1 {
+    text-align: center;
+    color: #333;
+}
+
+table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: left;
+}
+
+th {
+    background-color: #f0f0f0;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+    padding: 10px 15px; /* Agregar espacio alrededor del texto */
+    border: 1px solid #ddd; /* Agregar un borde sutil */
+    border-radius: 5px; /* Redondear las esquinas del borde */
+    transition: background-color 0.3s ease; /* Agregar una transición suave */
+    background-color: #81c484;
+}
+
+a:hover {
+    background-color: #f0f0f0; /* Cambiar el color de fondo al pasar el mouse */
+    text-decoration: underline;
+}
+/*Form*/
+/* Estilos generales para el formulario */
+form {
+    width: 50%; /* Ajusta el ancho del formulario según necesites */
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilos para las etiquetas */
+label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Estilos para los campos de entrada */
+input[type="text"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    box-sizing: border-box; /* Asegura que el padding y el borde se incluyan en el ancho total */
+}
+
+/* Estilos para el botón de enviar */
+button[type="submit"] {
+    background-color: #4CAF50; /* Color de fondo verde */
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+/* Cambiar el color del botón al pasar el mouse */
+button[type="submit"]:hover {
+    background-color: #45a049; /* Color de fondo verde más oscuro */
+}
