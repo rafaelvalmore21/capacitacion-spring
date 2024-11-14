@@ -1,6 +1,8 @@
 package com.organizacion.software;
 
+import com.organizacion.software.model.Pedido;
 import com.organizacion.software.model.Producto;
+import com.organizacion.software.repository.PedidoRepository;
 import com.organizacion.software.repository.ProductoRepository;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.CommandLineRunner;
@@ -17,7 +19,7 @@ public class SoftwareApplication {
 	}
 
 	@Bean
-	public CommandLineRunner example(ProductoRepository repository) {
+	public CommandLineRunner example(ProductoRepository repository, PedidoRepository pedidoRepository) {
 		return (args) -> {
 			// save a few items
 			repository.save(new Producto(1L,"Iphone","16 Pro 256Gb",3.500,10));
@@ -30,6 +32,15 @@ public class SoftwareApplication {
 			log.info("-------------------------------");
 			for (Producto producto : repository.findAll()) {
 				log.info(producto.toString());
+			}
+			log.info("-------------------------------");
+			pedidoRepository.save(new Pedido(1L,"13/11/2024",23000.00,1L));
+			pedidoRepository.save(new Pedido(1L,"13/11/2024",23000.00,2L));
+			// fetch all items
+			log.info("Consulta todos los registros de pedidos");
+			log.info("-------------------------------");
+			for (Pedido pedido : pedidoRepository.findAll()) {
+				log.info(pedido.toString());
 			}
 			log.info("-------------------------------");
 		};

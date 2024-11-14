@@ -2,29 +2,27 @@
 <html xmlns:th="http://www.thymeleaf.org" lang="es">
 <head>
     <meta charset="UTF-8">
-    <title>Productos</title>
+    <title>Pedidos</title>
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
-<h1>Productos</h1>
-<a href="/productos/new">Nuevo Producto</a>
+<h1>Pedidos</h1>
+<a href="/pedidos/new">Nuevo Pedido</a>
 <table>
     <tr>
-        <th>Nombre</th>
-        <th>Descripción</th>
-        <th>Precio</th>
-        <th>Cantidad</th>
+        <th>Fecha pedido</th>
+        <th>Total</th>
+        <th>Cliente</th>
         <th>Acciones</th>
     </tr>
-    <tr th:each="producto : ${productos}">
+    <tr th:each="pedido : ${pedidos}">
         <!--td th:text="${producto.id}"></td-->
-        <td th:text="${producto.nombre}"></td>
-        <td th:text="${producto.descripcion}"></td>
-        <td th:text="${producto.precio}"></td>
-        <td th:text="${producto.cantidad}"></td>
+        <td th:text="${pedido.fechaPedido}"></td>
+        <td th:text="${pedido.total}"></td>
+        <td th:text="${pedido.clienteId.nombre} ${pedido.clienteId.apellido}"></td>
         <td>
-            <a th:href="@{/productos/edit/{id}(id=${producto.id})}">Editar</a>
-            <a th:href="@{/productos/delete/{id}(id=${producto.id})}">Eliminar</a>
+            <a th:href="@{/pedidos/edit/{id}(id=${pedido.id})}">Editar</a>
+            <a th:href="@{/pedidos/delete/{id}(id=${pedido.id})}">Eliminar</a>
         </td>
     </tr>
 </table>
